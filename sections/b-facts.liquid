@@ -1,0 +1,79 @@
+<footer class="footer">
+  <section class="facts">
+    <div class="content fact">
+      <div class="fact__item">
+        <h3 class="fact__title">We shipped</h3>
+        <div class="fact__number">
+          <span class="counter" data-target="72550">0</span>
+        </div>
+        <p class="fact__text">orders</p>
+      </div>
+      <div class="fact__item">
+        <h3 class="fact__title">We printed</h3>
+        <div class="fact__number">
+          <span class="counter" data-target="25500">0</span>
+          m2</div>
+        <p class="fact__text">fabric</p>
+      </div>
+      <div class="fact__item">
+        <h3 class="fact__title">We used</h3>
+        <div class="fact__number">
+          <span class="counter" data-target="70500">0</span>
+          cartridges</div>
+        <p class="fact__text">of ink</p>
+      </div>
+    </div>
+  </section>
+</footer>
+
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 100; // The lower the slower
+
+  const options = {
+    threshold: 1 // Percentage of the target element visible in the viewport
+  };
+
+  const animateCounters = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = + entry.target.getAttribute('data-target');
+        const counter = entry.target;
+        const updateCount = () => {
+          const count = + counter.innerText;
+          const inc = target / speed;
+
+          if (count < target) {
+            counter.innerText = count + inc;
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(animateCounters, options);
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+</script>
+
+
+
+{% schema %}
+  {
+    "name": "Facts",
+    "presets": [
+      {
+        "name": "Facts"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,105 @@
+<section id="pricing">
+  <div class="content">
+
+    <h2 class="subtitle-main">{{ section.settings.price_title }}</h2>
+
+    <br>
+    {{ section.settings.price_info }}
+  </div>
+
+
+  <div class="content">
+
+    <div class="pricing">
+      {% for block in section.blocks %}
+        <div class="price_box">
+          <p class="price_box__title">{{ block.settings.price_title }}</p>
+          <p class="text">{{ block.settings.Only }}</p>
+          <p class="price">{{ block.settings.amount }}
+            <span>{{ block.settings.piece }}</span>
+          </p>
+          <ul>
+            <li>{{ block.settings.for_fabric }}</li>
+            <li>{{ block.settings.fabric_unit }}</li>
+            <li>{{ block.settings.design }}</li>
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+
+    <a class="btn_pink" href="/pages/fabric-prices">see our pricing</a>
+
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Pricing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "price_title",
+        "label": "Price title",
+        "default": "Pricing"
+      }, {
+        "type": "richtext",
+        "id": "price_info",
+        "label": "Price info",
+        "default": "<p>Pricing information</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "limit": 3,
+        "name": "Price Item",
+        "type": "PriceItem",
+        "settings": [
+          {
+            "type": "text",
+            "id": "price_title",
+            "label": "Price title",
+            "default": "SAMPLE"
+          },
+          {
+            "type": "text",
+            "id": "Only",
+            "label": "Price Only",
+            "default": "Only"
+          },
+          {
+            "type": "text",
+            "id": "amount",
+            "label": "Price amount",
+            "default": "0,00 €"
+          },
+          {
+            "type": "text",
+            "id": "piece",
+            "label": "Price piece",
+            "default": "a piece"
+          }, {
+            "type": "text",
+            "id": "for_fabric",
+            "label": "For printed fabric",
+            "default": "for printed fabric"
+          }, {
+            "type": "text",
+            "id": "fabric_unit",
+            "label": "Units",
+            "default": "20 x 20 cm"
+          }, {
+            "type": "text",
+            "id": "design",
+            "label": "Design or fabric",
+            "default": "any design or fabric"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Pricing"
+      }
+    ]
+  }
+{% endschema %}

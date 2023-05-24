@@ -1,0 +1,38 @@
+<div class="search_bar">
+  <div class="content">
+    <form
+      action="/search"
+      role="search"
+      accept-charset="UTF-8"
+      method="get">
+      <input
+        type="submit"
+        name="commit"
+        class="btn_search_header"
+        data-disable-with="">
+      <input
+        type="text"
+        name="q"
+        id="q"
+        placeholder="Find a fabric design you want..."
+        class="search_pattern_bar">
+      <input
+        type="hidden"
+        name="source"
+        id="source"
+        value="user"
+        autocomplete="off">
+    </form>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Search Bar",
+    "presets": [
+      {
+        "name": "Search Bar"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,79 @@
+<div class="faq">
+  <h2 class="sku-title">FAQ</h2>
+  <div class="faq__row">
+    <div class="faq__content">
+      <div class="faq__box">
+        <div class="faq__box-header jsShowAnswear">
+          What technology do you print with?
+          <span class="icon-plus"></span>
+        </div>
+        <div class="faq__box-content">
+          <p class="faq__box-text">All of our cotton fabrics are printed digitally using pigmented inks. Our polyester fabrics are printed using sublimation printing. <br><br> Pigment ink printing technology is considered to be the least invasive for the environment and completely safe for people. The device on which we print can be compared to large-size inkjet printers. On such a printer, we put a bolt of white cotton fabric (we print on both woven and knitted fabrics). Then we send the design to the device, and the print head applies the pigment inks on the surface of the fabric. The pigment inks we use in our printing house comply with the requirements of OEKO-TEX Standard 100 (class I and II) and GOTS 6.0 certificates. Our printed organic fabrics are GOTS 6.0 certified. The finished printout is fixed at a high temperature. We do not use water in the printing process. <br><br> Dye-sublimation printing technology is perfect for polyester fabrics with over 80% of the textile being made of polyester fibres. In sublimation, printing designs are printed in two steps. At first, the design is applied to transfer paper and then the paper and fabric are sandwiched together in a calendering machine. Using pressure and high heat pigments go from solid to the gaseous state and bind directly with the fibres of the textile. <br><br> Printing technologies we use have nothing in common with solvent inks or other aggressive solvent dyes that are popular in the advertising industry.</p>
+        </div>
+      </div>
+      <div class="faq__box">
+        <div class="faq__box-header jsShowAnswear">
+          Can I use CottonBee materials with a design from the catalogue for commercial purposes (for sale)?
+          <span class="icon-plus"></span>
+        </div>
+        <div class="faq__box-content">
+          <p class="faq__box-text">Yes, you can but only if you buy at least 1 m of the fabric with a design from the catalogue. <br><br> According to graphics and design licensing requirements, if you buy CottonBee fabrics with a design from the catalogue, you get a Standard License. More details about licensing of the designs within Standard License can be found
+            <a href="https://stock.adobe.com/uk/license-terms">here</a>. For legal use of printed fabrics for commercial purposes (i.e. making a dress for sale), you need to get at least 1 m of the printed fabric. Printed samples and swatches with designs from the catalogue are dedicated to checking the print quality and can’t be used for sale.</p>
+        </div>
+      </div>
+      <div class="faq__box">
+        <div class="faq__box-header jsShowAnswear">
+          Can I print my own pattern on the fabric?
+          <span class="icon-plus"></span>
+        </div>
+        <div class="faq__box-content" style="">
+          <p class="faq__box-text">Our
+            <a href="https://ctnbee.com/en/upload">Upload</a>
+            tool allows you to print your pattern from the uploaded file. We accept TIFF, JPG and PNG formats with a maximum size of 25 MB and a maximum resolution of 10000 x 10000 px. To achieve the best results, save the graphics in the CMYK palette. <br><br> If your file exceeds these dimensions, you can share it through a free file hosting, for example, via the wetransfer.com platform.<br><br> You can print a variety of projects on fabric, including writings, scans of sketches or artwork made using any technique, graphics, seamless patterns, photos.</p>
+        </div>
+      </div>
+      <p class="faq__text">If you have any questions, please contact us at
+        <a href="mailto:help@ctnbee.com">help@ctnbee.com</a>.</p>
+    </div>
+    <div class="faq__img">
+      <picture>
+        <source type="image/webp" srcset="https://ctnbee.com/assets/front/sku/sku-faq-8e869672ac4cbfedb40801550ee84475490ec7f28b9fde0632e36e8f54995479.webp">
+        <source type="image/jpg" srcset="/assets/front/sku/sku-faq-2c00bc864418e6df0d1ecfa5d917da98087476fdd823d4d05ad682e3ac60fb9c.jpg">
+        <img
+          data-src="/assets/front/sku/sku-faq-2c00bc864418e6df0d1ecfa5d917da98087476fdd823d4d05ad682e3ac60fb9c.jpg"
+          alt="CottonBee"
+          class="lozad"
+          src="/assets/front/sku/sku-faq-2c00bc864418e6df0d1ecfa5d917da98087476fdd823d4d05ad682e3ac60fb9c.jpg"
+          data-loaded="true">
+      </picture>
+    </div>
+  </div>
+</div>
+<style>
+  span.icon-plus.rotate {
+    transform: rotate(45deg);
+  }
+</style>
+<script>
+  let iconPlus = document.getElementsByClassName("icon-plus");
+  let accordions = document.getElementsByClassName("faq__box-header");
+  for (let i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+      let panel = this.nextElementSibling;
+      panel.classList.toggle("active");
+      let plusIcon = iconPlus[i];
+      plusIcon.classList.toggle("rotate");
+    });
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "P FAQ",
+    "presets": [
+      {
+        "name": "P FAQ"
+      }
+    ]
+  }
+{% endschema %}

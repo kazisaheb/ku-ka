@@ -1,0 +1,104 @@
+<div class="main_container">
+
+  <section class="upload body">
+    <div class="container upload-new">
+      <h1 class="upload-new__main-title">Upload your pattern</h1>
+      <div>
+
+        <div class="drop-zone needsclick dz-clickable" id="uploader">
+
+          <div id="upload-drop-info">
+            <img
+              src="https://ctnbee.com/assets/front/icon-upload-d9f4edce719cf71edcb55229fabbed85c065d6043c5b446e6504ae25b2560517.png"
+              alt="CottonBee"
+              class="upload-new__icon">
+            <p class="upload-new__statement"></p>
+            <p class="upload-new__title">Drop the file or click here to upload it</p>
+          </div>
+
+          <div id="upload-file-info-wrong" style="display: none;">
+            <p class="upload-new__statement error">Ops! Your file is WRONG!</p>
+            <p class="upload-new__title">Choose a different file</p>
+          </div>
+
+          <div id="upload-file-info-ok" style="display: none;">
+            <p class="upload-new__statement">Great! Your file is GOOD!</p>
+            <p class="upload-new__title">Uploading the file can take a while.</p>
+          </div>
+
+          <div class="upload-new__file" id="drop-zone-file-info">
+            <p class="upload-new__file-item" id="drop-zone-file-name"></p>
+            <p class="upload-new__file-item" id="drop-zone-file-size-bytes"></p>
+            <p class="upload-new__file-item" id="drop-zone-file-size-wh"></p>
+          </div>
+
+          <div
+            id="loading-info-spinner"
+            class="upload-new__process-text"
+            style="display: none;">
+            Processing...
+          </div>
+
+          <div class="progress-wrapper" style="display: none;">
+            <p id="loading-info-progress" class="progress-info"></p>
+            <div class="progress-box">
+              <div
+                id="loading-info-progress-bar"
+                class="progress-box__line"
+                style="width: 40%"></div>
+            </div>
+          </div>
+
+          <a id="drop-zone-file-size-selector" class="btn_pink">
+            upload file
+          </a>
+
+          <a
+            id="drop-zone-file-upload"
+            class="btn_pink"
+            style="display: none;">
+            NEXT
+          </a>
+
+          <p class="upload-new__info">We accept TIFF, JPG, PNG. Max 25 MB and 10 000 x 10 000 px, CMYK profile</p>
+          <p class="upload-new__info-light">
+            If you have any difficulties with uploading a file, please contact us on
+            <a href="mailto: help@ctnbee.com">help@ctnbee.com</a>
+          </p>
+
+          <div class="upload-new__copyright" id="file-copyright-wrapper">
+            <input
+              type="checkbox"
+              checked="checked"
+              class="filled-in"
+              id="file-copyright"
+              name="file-copyright"
+              readonly="readonly">
+            <label for="file-copyright" class="active">Uploading the file means that you have the copyright on the uploaded file. The file is your property or you have the permission to use it.
+            </label>
+          </div>
+        </div>
+
+        <p class="light_text">
+          Don’t know how to prepare your design?
+          <a
+            target="_blank"
+            href="https://ctnbee.com/faq/en/category/preparing-image-files/"
+            rel="noopener">Check our tutorial.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Upload",
+    "presets": [
+      {
+        "name": "Upload"
+      }
+    ]
+  }
+{% endschema %}

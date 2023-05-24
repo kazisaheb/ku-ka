@@ -1,0 +1,173 @@
+<div class="main_container">
+  <div class="container xl">
+    <section class="fabric-group">
+      <h2 class="secondary-title">{{ section.settings.listing_title }}</h2>
+      {% for block in section.blocks %}
+        <div class="item">
+          <div class="item__header jsShowContent">
+            <p class="item__header-name">
+              {{ block.settings.fabric_name }}
+              <span>{{ block.settings.fabric_type }}</span>
+              {% if block.settings.new %}
+                <i>New</i>
+              {% endif %}
+            </p>
+            <p class="item__header-price">{{ block.settings.fabric_price }}</p>
+          </div>
+          <div class="item__content">
+            <div>
+              <p class="item__content-price">
+                {{ block.settings.discount_text }}
+                <span class="text-link js-ShowBulkDiscount">{{ block.settings.bulk_discount }}</span>
+              </p>
+              <div class="item__images">
+                <picture>
+                  <img src="{{ block.settings.img_1 | img_url: 'medium' }}">
+                </picture>
+                <picture>
+                  <img src="{{ block.settings.img_2 | img_url: 'medium' }}">
+                </picture>
+                <picture>
+                  <img src="{{ block.settings.img_3 | img_url: 'medium' }}">
+                </picture>
+              </div>
+              <div class="item__info">
+                {% if block.settings.btn_1 != empty %}
+                  <div class="item__label">
+                    {{ block.settings.btn_1 }}
+                  </div>
+                {% endif %}
+                <div class="item__label {{ block.settings.btn_color }}">
+                  {{ block.settings.btn_2 }}
+                </div>
+                <p class="item__subtitle">{{ block.settings.item_subtitle }}</p>
+                <ul class="item__list">
+                  {{ block.settings.list }}
+                </ul>
+                <a class="btn_pink" href="{{ block.settings.btn_link }}">{{ block.settings.btn_txt }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Listing Price",
+    "settings": [
+      {
+        "type": "text",
+        "id": "listing_title",
+        "label": "Listing title",
+        "default": "Listing title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Listing",
+        "type": "Listing",
+        "settings": [
+          {
+            "type": "text",
+            "id": "fabric_name",
+            "label": "Fabric name",
+            "default": "Fabric name"
+          },
+          {
+            "type": "text",
+            "id": "fabric_type",
+            "label": "Fabric type",
+            "default": "Fabric type"
+          },
+          {
+            "type": "checkbox",
+            "id": "new",
+            "label": "New?",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "fabric_price",
+            "label": "Fabric price",
+            "default": "00 EUR / 00 GBP / running metre"
+          }, {
+            "type": "text",
+            "id": "discount_text",
+            "label": "Discount text",
+            "default": "Price of printed fabric before bulk and business discounts."
+          }, {
+            "type": "text",
+            "id": "bulk_discount",
+            "label": "Bulk discount",
+            "default": "See bulk discounts."
+          }, {
+            "type": "text",
+            "id": "btn_1",
+            "label": "Button 1 text",
+            "default": "GOTS certified"
+          }, {
+            "type": "text",
+            "id": "btn_2",
+            "label": "Button 2 text",
+            "default": "OEKO-TEX®"
+          }, {
+            "type": "select",
+            "id": "btn_color",
+            "label": "Button 2 color",
+            "default": "pink",
+            "options": [
+              {
+                "value": "yellow",
+                "label": "Yellow"
+              }, {
+                "value": "pink",
+                "label": "Pink"
+              }, {
+                "value": "green",
+                "label": "Green"
+              }
+            ]
+          }, {
+            "type": "text",
+            "id": "item_subtitle",
+            "label": "Item subtitle:",
+            "default": "SPECIFICATION:"
+          }, {
+            "type": "richtext",
+            "id": "list",
+            "label": "Specifications:"
+          }, {
+            "type": "text",
+            "id": "btn_txt",
+            "label": "Button text",
+            "default": "FIND OUT MORE ABOUT FABRIC"
+          }, {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button link"
+          }, {
+            "type": "image_picker",
+            "id": "img_1",
+            "label": "Image 1"
+          }, {
+            "type": "image_picker",
+            "id": "img_2",
+            "label": "Image 2"
+          }, {
+            "type": "image_picker",
+            "id": "img_3",
+            "label": "Image 3"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Listing Price"
+      }
+    ]
+  }
+{% endschema %}
